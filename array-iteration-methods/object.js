@@ -1,11 +1,14 @@
 //collection of kery value pairs ( key : value, key : value,..).
 //used to store multiple values in a single variable & value can be any data type.
 
-const person = { 
-    name : `saran`,
-    age : 20,
-    isStudent : true
+const person = {
+    name: `saran`,
+    age: 20,
+    isStudent: true
+
 };
+
+
 
 
 console.log(person.name);
