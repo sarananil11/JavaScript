@@ -7,5 +7,13 @@ console.log(evenNum);
 
 
 
+//my example
+
+
+let k=[-1,-2,-3,4,5];
+let kPos=k.filter(k=>k>1);
+console.log(kPos);
+
+
 
 

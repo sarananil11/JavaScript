@@ -13,7 +13,7 @@ console.log("after a-=",a);
 //using *=
 
 a*=5;
-console.log("after a*=, answer is :",a);
+console.log("after a*=",a);
 
 // using /=
 

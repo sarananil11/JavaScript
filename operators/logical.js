@@ -6,7 +6,7 @@ console.log(`true & false`, true && false);
 let a = 2;
 let b = 21;
 let x = a > b && b > a;
-console.log( `x is:`, x);
+console.log(`x is:`, x);
 
 
 
@@ -17,7 +17,7 @@ console.log(`false or false:`, false || false);
 
 
 let y = a > b || b > a;
-console.log( `y is :`,  y);
+console.log(`y is :`, y);
 
 
 
@@ -29,5 +29,5 @@ console.log(`not false :`, !false);
 
 
 let z = !(a > b); //op should be false but '!' made it true.
-console.log( `z is :`, z);
+console.log(`z is :`, z);
 

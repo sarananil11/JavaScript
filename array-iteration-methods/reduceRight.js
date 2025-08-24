@@ -8,5 +8,5 @@ console.log(result);
 //my example
 
 let akkam = [2, 3, 4, 1];
-let thuka = akkam.reduceRight((acc, akkam) => akkam + acc, 0);
+let thuka = akkam.reduceRight((acc, akkam) => acc + akkam, 10);
 console.log(thuka);
