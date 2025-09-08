@@ -15,3 +15,4 @@ console.log(add(3,3));
 // syntax : const handleSubmit = (paran) => { curly brace for multi line};
 const addition = (a,b) => a+b;
 console.log(addition(3,3));
+
