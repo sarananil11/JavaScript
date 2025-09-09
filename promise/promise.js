@@ -28,7 +28,7 @@ let myPromise = new Promise((resolve, reject) => {  // creates a new promise obj
         } else {
             reject(`Promise rejected`);
         }
-    }, 2000)  // 2000 is timeout. 2ms.
+    }, 2000)  // 2000 is timeout. 2s.
 
 })
 
