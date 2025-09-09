@@ -1,3 +1,3 @@
 const str = `pineapple`;
-const strIncludes = str.includes(`apple`);
+const strIncludes = str.includes(`a`);
 console.log(strIncludes);
