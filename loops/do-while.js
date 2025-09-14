@@ -5,4 +5,4 @@ do {
     console.log(`Do-while:`, i);  //do
     i++;
 
-} while (i < 2);        //condition
+} while (i < 5);        //condition

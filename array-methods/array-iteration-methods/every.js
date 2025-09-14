@@ -10,6 +10,6 @@ console.log(`condition is: ${everyOdd}`);
 
 //my example
 
-let heigt = [144, 171, 180, 156, 167];
-let neededHeight = heigt.every(heigt => heigt >= 144);
+let height = [144, 171, 180, 156, 167];
+let neededHeight = height.every(height => height >= 144);
 console.log(neededHeight);

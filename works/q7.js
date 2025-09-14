@@ -8,6 +8,6 @@ if (number % 3 ==0  && number % 5 ==0) {
     console.log(`Number is divisible by 3 & 5`);
     
 } else {
-    console.log(`Number can't be divisible by 3 or 5`);
+    console.log(`Number can't be divisible by any of 3 or 5`);
     
 }

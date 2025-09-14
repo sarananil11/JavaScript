@@ -21,7 +21,7 @@ const person = {
     name: `Saran Anil V P`,
     email: `sarananilvp2020@gmail.com`,
     greet: function () {
-        console.log(`Hello, my name is ${this.name}`);
+        console.log(`Hello, my name is ${this.name}, my email is : ${this.email}`);
     }
 
 

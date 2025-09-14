@@ -1,15 +1,15 @@
-let colors= ['red', 'blue', 'green'];
+let colors = ['red', 'blue', 'green'];
 
 //accessing first element
 
-let firstColor= colors[0];
-console.log(firstColor,`is the first color`);
+let firstColor = colors[0];
+console.log(firstColor, `is the first color`);
 
 
 
 //modifying second element
 
-colors[1]=`yellow`;
+colors[1] = `yellow`;
 console.log(colors);
 
 

@@ -2,8 +2,11 @@
 
 //condition ? value-if-true : value-if-false;
 
+// prompt = require(`prompt-sync`)();
+// let age = prompt(`Enter age :`);
 
-let age = 8;
+
+let age = 10;
 let result = (age >= 18) ? `adult` : `minor`;
 console.log(result);
 

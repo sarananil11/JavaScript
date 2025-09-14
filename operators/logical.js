@@ -1,6 +1,6 @@
 //logical AND ( && )
-console.log(`true & true`, true && true);
-console.log(`true & false`, true && false);
+console.log(`true & true =`, true && true);
+console.log(`true & false =`, true && false);
 
 
 let a = 2;

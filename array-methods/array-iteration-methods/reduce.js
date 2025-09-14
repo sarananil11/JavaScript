@@ -14,6 +14,6 @@ console.log(`aake thuka ithaan:`, thuka);
 
 
 //another example
-let n=[99,745,92,905,8828];
-let nNeg=n.reduce((acc,n)=> acc - n, 0);
+let n = [99, 745, 92, 905, 8828];
+let nNeg = n.reduce((acc, n) => acc - n, 0);
 console.log(nNeg);

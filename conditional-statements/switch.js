@@ -3,7 +3,7 @@
 const prompt = require(`prompt-sync`)();
 
 let day = prompt(`Enter a day : `);
-
+// day = String(day);
 switch (day) {
     case `monday`:
         console.log(`first day`);

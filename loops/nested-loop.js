@@ -6,11 +6,11 @@ for (let i = 0; i <= 5; i++) {
         row += `*`;
     }
     console.log(row);
-    
-    
+
+
 }
 
-// or 
+// or
 
 // for (let i = 1; i <= 5; i++) {
 //     console.log('*'.repeat(i));
