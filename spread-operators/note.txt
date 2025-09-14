@@ -1,0 +1,3 @@
+1. The spread operator (...) in javascript is used to spread out the elements of an array or the properties of an object.
+2. To copy elements of array or object exactly.
+3. Incase or array, we say combine. But for object, we say merge (joining).
