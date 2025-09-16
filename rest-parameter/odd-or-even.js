@@ -1,3 +1,4 @@
+
 function oddEven(...numbers) {  // rest parameter
     return numbers.map(num => num % 2 === 0 ? `${num} is even` : `${num} is odd`);  // i used map bcoz it returns a new array unlike forEach.
 
