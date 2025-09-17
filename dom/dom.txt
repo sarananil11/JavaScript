@@ -1,0 +1,4 @@
+1. DOM => Document Object Model.
+2. DOM is a programming interface provided by the browser.
+3. It allows js to interact with and manipulate the structure, style, and the content of a webpage.
+4. Programming Interface is set of tools, methods and rules that allows software to interact with webpage.

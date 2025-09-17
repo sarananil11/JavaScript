@@ -1,5 +1,5 @@
 class Movie {
-    constructor(name, color) {
+    constructor(name, color, engine) {
         this.name = name;
         this.color = color;
     }
@@ -11,8 +11,7 @@ class Movie {
 
 class B_and_W extends Movie {
     constructor(name, duration, color) {
-        super(name);  // super can be defined only once.
-        this.color = color;
+        super(name, color);  // super can be defined only once.
         this.duration = duration;
     }
     motion() {
@@ -22,5 +21,5 @@ class B_and_W extends Movie {
 
 }
 
-const b_and_w = new B_and_W(`Brahmayugam`, `2 hours 17 minutes`, `black and white`);
+const b_and_w = new B_and_W(`Brahmayugam`, `2 hours 17 minutes`, `black and white.`);
 b_and_w.motion();
