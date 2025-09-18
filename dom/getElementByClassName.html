@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>getElementByClassName</title>
+  </head>
+  <style>
+    .box,
+    .main {
+      text-align: center;
+      font-size: 100px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+  </style>
+  <body>
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+    <div class="main">Box 4</div>
+
+    <script>
+      const boxes = document.getElementsByClassName(`box`);
+      console.log(`Found elements ${boxes}`);
+
+      for (let i = 0; i < boxes.length; i++) {
+        boxes[i].style.color = `blue`; // if  i is less than the length of number of box, box will be blue.
+      }
+    </script>
+  </body>
+</html>

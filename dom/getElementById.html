@@ -1,0 +1,27 @@
+<!-- getElementById is a js method used to select an html element by it's id
+attribute. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>getElementById</title>
+  </head>
+  <body>
+    <h1 id="mainHeading">Welcome</h1>
+    <button onclick="changeHeading()">Change Heading</button>
+
+    <!-- script -->
+
+    <script>
+      function changeHeading() {
+        // use getElementById to access the heading.
+        const heading = document.getElementById(`mainHeading`);
+
+        //change text
+        heading.textContent = `Hello, you clicked the button`;
+      }
+    </script>
+  </body>
+</html>
