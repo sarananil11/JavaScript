@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Spa Client Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url(https://c4.wallpaperflare.com/wallpaper/696/274/479/gradient-green-blue-violet-wallpaper-preview.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+
+      .formcard {
+        padding: 30px;
+        border-radius: 10px;
+        width: 500px;
+      }
+
+      h2 {
+        font-family: cursive;
+        font-size: 32px;
+        color: white;
+        text-align: center;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      label {
+        color: white;
+        font-weight: bold;
+        display: block;
+        margin-top: 10px;
+      }
+
+      input,
+      select {
+        display: block;
+        background: transparent;
+        border: 2px solid #f2f2f2;
+        margin: 6px 0;
+        padding: 8px;
+        width: 250px;
+        border-radius: 4px;
+        color: rgb(0, 0, 0);
+        background-color: rgba(255, 255, 255, 0.5); /* black with 50% transparency */
+      }
+
+      input::placeholder {
+        color: #ddd;
+      }
+
+      .error {
+        color: red;
+        font-size: 13px;
+        margin-bottom: 5px;
+        text-align: center;
+        width: 250px;
+      }
+
+      .row {
+        display: flex;
+        justify-content: center;
+        gap: 27px;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .row input,
+      .row select {
+        width: 200px;
+      }
+      .rowwww{
+        width: 240px;
+      }
+
+      button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background: #ffffff;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: hsl(130, 100%, 60%);
+        
+      }
+      option{
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="formcard">
+      <h2>Spa Client Intake Form</h2>
+      <form id="myForm" onsubmit="return validateForm()">
+        <!-- Name Area -->
+        <div class="row">
+          <div>
+            <label>First Name:</label>
+            <input type="text" id="name" name="name" />
+            <span class="error" id="nameError"></span>
+          </div>
+          <div>
+            <label>Last Name:</label>
+            <input type="text" id="lastname" name="lastname" />
+            <span class="error" id="lastnameError"></span>
+          </div>
+        </div>
+        <br><br>
+
+        <!-- Phone -->
+        <label>Phone Number:</label>
+        <input style="width: 444px;" type="text" id="phone" name="phone" />
+        <span class="error" id="phoneError"></span>
+        <br>
+
+        <!-- Email -->
+        <label>Email:</label>
+        <input style="width: 444px;" type="text" id="email" name="email" />
+        <span class="error" id="emailError"></span>
+        <br>
+
+        <!-- Address -->
+        <label>Address:</label>
+        <input style="width: 444px;" type="text" id="street" name="street" />
+        <label for="">Street address</label> <br>
+        <span class="error" id="streetError"></span>
+        <br>
+
+        
+        <input style="width: 444px;" type="text" id="addressline" name="addressline" />
+        <label>Address Line 2</label> <br>
+        <span class="error" id="addresslineError"></span>
+        
+
+        <div class="row">
+          <div>
+            
+            <input type="text" id="city" name="city" />
+            <span class="error" id="cityError"></span>
+            <label>City:</label>
+          </div>
+          <div>
+            
+            <input type="text" id="state" name="state" />
+            <span class="error" id="stateError"></span>
+            <label>State:</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="rowwww">
+           
+            <input type="text" id="postal" name="postal" />
+            <span class="error" id="postalError"></span>
+             <label>Postal Code:</label>
+          </div>
+          <div>
+           
+            <select id="country" name="country">
+              <option value="">Select</option>
+              <option value="India">India</option>
+              <option value="USA">USA</option>
+              <option value="Cuba">Cuba</option>
+            </select>
+            <span class="error" id="countryError"></span>
+             <label>Country:</label>
+          </div>
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <script>
+      function validateForm() {
+        let isValid = true;
+
+        // clear all errors
+        document.querySelectorAll(".error").forEach(e => e.innerText = "");
+
+        // Name validation
+        const name = document.getElementById("name").value.trim();
+        if (name === "") {
+          document.getElementById("nameError").innerText = "First name is required";
+          isValid = false;
+        }
+
+        const lastname = document.getElementById("lastname").value.trim();
+        if (lastname === "") {
+          document.getElementById("lastnameError").innerText = "Last name is required";
+          isValid = false;
+        }
+
+        // Phone validation
+        const phone = document.getElementById("phone").value.trim();
+        const phonePattern = /^[0-9]{10}$/;
+        if (!phonePattern.test(phone)) {
+          document.getElementById("phoneError").innerText = "Enter a valid 10-digit phone number";
+          isValid = false;
+        }
+
+        // Email validation
+        const email = document.getElementById("email").value.trim();
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+          document.getElementById("emailError").innerText = "Invalid email format";
+          isValid = false;
+        }
+
+        // Street address
+        if (document.getElementById("street").value.trim() === "") {
+          document.getElementById("streetError").innerText = "Street address required";
+          isValid = false;
+        }
+
+        // Address line
+        if (document.getElementById("addressline").value.trim() === "") {
+          document.getElementById("addresslineError").innerText = "Address line required";
+          isValid = false;
+        }
+
+        // City
+        if (document.getElementById("city").value.trim() === "") {
+          document.getElementById("cityError").innerText = "City is required";
+          isValid = false;
+        }
+
+        // State
+        if (document.getElementById("state").value.trim() === "") {
+          document.getElementById("stateError").innerText = "State is required";
+          isValid = false;
+        }
+
+        // Postal
+        const postal = document.getElementById("postal").value.trim();
+        const postalPattern = /^[0-9]{4,6}$/;
+        if (!postalPattern.test(postal)) {
+          document.getElementById("postalError").innerText = "Enter valid postal code";
+          isValid = false;
+        }
+
+        // Country
+        if (document.getElementById("country").value === "") {
+          document.getElementById("countryError").innerText = "Select a country";
+          isValid = false;
+        }
+        return isValid;
+      }
+    </script>
+  </body>
+</html>

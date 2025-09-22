@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Validation</title>
+    <style>
+      body {
+        font-family: Arial;
+        padding: 20px;
+        background-color: chocolate;
+      }
+      .container {
+        display: grid;
+        justify-content: center;
+        background-color: rgb(186, 241, 34);
+        text-align: justify;
+        width: 50%;
+        margin-left: 25%;
+        border-radius: 20px;
+        height: 55rem;
+      }
+      .mybtn {
+        text-align: center;
+        padding: 20px;
+        width: 320px;
+        border: none;
+        border-radius: 20px;
+      }
+      .mybtn:hover {
+        background-color: aquamarine;
+      }
+      input,
+      select {
+        display: block;
+        margin: 10px 0;
+        padding: 8px;
+        width: 300px;
+        border: none;
+        border-radius: 20px;
+        
+        
+      }
+      .error {
+        color: red;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 style="text-align: center">Registration Form</h2>
+      <form id="myForm" onsubmit="return validateForm()">
+        <label>Name:</label>
+        <input type="text" id="name" name="name" />
+        <span class="error" id="nameError"></span>
+        <br />
+        <br />
+
+        <label>Email:</label>
+        <input type="text" id="email" name="email" />
+        <span class="error" id="emailError"></span>
+        <br />
+        <br />
+
+        <label>Age:</label>
+        <input type="text" id="age" name="age" />
+        <span class="error" id="ageError"></span>
+        <br />
+        <br />
+
+        <label>Gender:</label>
+        <select id="gender">
+          <option value="">--Select a gender--</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Others</option></select
+        ><br /><br />
+        <span class="error" id="genderError"></span>
+        <br />
+        <br />
+        <br /><br />
+
+        <label>Password:</label>
+        <input type="password" id="password" name="password" />
+        <span class="error" id="passwordError"></span>
+        <br /><br />
+
+        <label>Confirm Password:</label>
+        <input type="password" id="confpassword" name="confpassword" />
+        <span class="error" id="confpasswordError"></span>
+        <br /><br />
+
+        <button class="mybtn" type="submit">Submit</button>
+      </form>
+    </div>
+
+    <script>
+      function validateForm() {
+        // Clear previous errors
+        document.getElementById("nameError").innerText = "";
+        document.getElementById("emailError").innerText = "";
+        document.getElementById("ageError").innerText = "";
+        document.getElementById("genderError").innerText = "";
+        document.getElementById("passwordError").innerText = "";
+        document.getElementById("confpasswordError").innerText = "";
+
+        let isValid = true;
+
+        // Name validation
+        const name = document.getElementById("name").value.trim();
+        if (name === "") {
+          document.getElementById("nameError").innerText = "Name is required";
+          isValid = false;
+        }
+
+        // Email validation
+        const email = document.getElementById("email").value.trim();
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+          document.getElementById("emailError").innerText =
+            "Invalid email format";
+          isValid = false;
+        }
+
+        // age number validation
+        const age = document.getElementById("age").value.trim();
+        const agePattern = /^(1[89]|[2-9][0-9])$/;
+
+        if (!agePattern.test(age)) {
+          document.getElementById("ageError").innerText =
+            "Age should be between 18-99 ";
+          isValid = false;
+        }
+
+        // gender validation
+        const gender = document.getElementById("gender").value.trim();
+        if (gender === "") {
+          document.getElementById("genderError").innerText =
+            "Select a valid gender";
+        }
+
+        // password
+        const password = document.getElementById("password").value.trim();
+        const passwordPattern = /^.{8,}$/;
+        if (!passwordPattern.test(password)) {
+          document.getElementById("passwordError").innerText =
+            "Password should be atleast 8 characters";
+          isValid = false;
+        }
+
+        //confirm password
+        const confpassword = document
+          .getElementById("confpassword")
+          .value.trim();
+        const confpasswordPattern = /^.{8,}$/;
+        if (confpassword !== password) {
+          document.getElementById("confpasswordError").innerText =
+            "Password should be same";
+          isValid = false;
+        }
+
+        return isValid;
+      }
+    </script>
+  </body>
+</html>
