@@ -1,0 +1,26 @@
+ <!-- directly removes the element from the DOM. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove element</title>
+</head>
+<body>
+    <h2 id="h2-element">Remove Example</h2>
+    <p id="my-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <button onclick="removePara()">Remove Paragraph</button>
+
+    <script>
+        function removePara() {
+            let para = document.getElementById("my-para");
+            para.remove();  // directly remove from DOM
+
+
+            let h2element = document.getElementById("h2-element");
+            h2element.textContent = "Paragraph removed succesfully 😁";
+        }
+    </script>
+</body>
+</html>

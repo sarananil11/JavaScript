@@ -1,0 +1,1 @@
+1. textContent, innerText, innerHtml are properties used to acces or manipulate the contents inside an element.
