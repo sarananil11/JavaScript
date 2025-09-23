@@ -9,6 +9,7 @@
         background-repeat: no-repeat;
         background-size: cover;
         display: flex;
+        /* to make contents to center 👇🏼 */
         justify-content: center;
         align-items: center;
         min-height: 100vh;
@@ -22,7 +23,7 @@
       }
 
       h2 {
-        font-family: cursive;
+        font-family: "Brush Script MT", "Pacifico", cursive;
         font-size: 32px;
         color: white;
         text-align: center;
@@ -52,7 +53,7 @@
         width: 250px;
         border-radius: 4px;
         color: rgb(0, 0, 0);
-        background-color: rgba(255, 255, 255, 0.5); /* black with 50% transparency */
+        background-color: rgba(255, 255, 255, 0.5);
       }
 
       input::placeholder {
@@ -85,13 +86,14 @@
 
       button {
         margin-top: 20px;
-        padding: 10px 20px;
+        padding: 20px 20px;
         border: none;
-        border-radius: 5px;
+        border-radius: 10px;
         background: #ffffff;
         color: rgb(0, 0, 0);
         font-weight: bold;
         cursor: pointer;
+        width: 300px;
       }
 
       button:hover {
@@ -105,7 +107,7 @@
   </head>
   <body>
     <div class="formcard">
-      <h2>Spa Client Intake Form</h2>
+      <h2 style="cursor: pointer;" >Spa Client Intake Form</h2>
       <form id="myForm" onsubmit="return validateForm()">
         <!-- Name Area -->
         <div class="row">
@@ -137,40 +139,40 @@
         <!-- Address -->
         <label>Address:</label>
         <input style="width: 444px;" type="text" id="street" name="street" />
-        <label for="">Street address</label> <br>
+        <label style="font-weight: 100;" for="">Street address</label> <br>
         <span class="error" id="streetError"></span>
         <br>
 
         
         <input style="width: 444px;" type="text" id="addressline" name="addressline" />
-        <label>Address Line 2</label> <br>
+        <label style="font-weight: 100;" >Address Line 2</label> <br>
         <span class="error" id="addresslineError"></span>
         
 
         <div class="row">
           <div>
-            
+             <!-- city  -->
             <input type="text" id="city" name="city" />
             <span class="error" id="cityError"></span>
-            <label>City:</label>
+            <label style="font-weight: 100;" >City:</label>
           </div>
           <div>
-            
+            <!-- state  -->
             <input type="text" id="state" name="state" />
             <span class="error" id="stateError"></span>
-            <label>State:</label>
+            <label style="font-weight: 100;" >State:</label>
           </div>
         </div>
 
         <div class="row">
           <div class="rowwww">
-           
+           <!-- postal code  -->
             <input type="text" id="postal" name="postal" />
             <span class="error" id="postalError"></span>
-             <label>Postal Code:</label>
+             <label style="font-weight: 100;" >Postal Code:</label>
           </div>
           <div>
-           
+           <!-- country  -->
             <select id="country" name="country">
               <option value="">Select</option>
               <option value="India">India</option>
@@ -178,7 +180,7 @@
               <option value="Cuba">Cuba</option>
             </select>
             <span class="error" id="countryError"></span>
-             <label>Country:</label>
+             <label style="font-weight: 100;" >Country:</label>
           </div>
         </div>
 
@@ -190,7 +192,7 @@
       function validateForm() {
         let isValid = true;
 
-        // clear all errors
+        // clear all errors using forEach for quickness.
         document.querySelectorAll(".error").forEach(e => e.innerText = "");
 
         // Name validation
